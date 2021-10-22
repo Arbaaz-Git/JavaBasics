@@ -7,7 +7,7 @@ import java.util.Random;
 
 /**
  * @author Arbaaz Khan
- *
+ *	In this code I am creating objects of circle, rectangle and triangle and calling the functions that each of these objects inherited. 
  */
 public class Assignment3 {
 
