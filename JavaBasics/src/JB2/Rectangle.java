@@ -21,7 +21,7 @@ public class Rectangle implements Shape {
 
 	@Override
 	public void display(float area) {
-		System.out.println(area);		
+		System.out.println("The area of the rectangle is: "+area);		
 	}
 
 }

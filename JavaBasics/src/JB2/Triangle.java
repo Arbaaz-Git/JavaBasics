@@ -22,7 +22,7 @@ public class Triangle implements Shape {
 
 	@Override
 	public void display(float area) {
-		System.out.println(area);		
+		System.out.println("The area of the triangle is: "+area);		
 	}
 
 }
