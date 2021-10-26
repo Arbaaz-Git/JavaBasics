@@ -5,6 +5,7 @@ package JB4Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -24,6 +25,12 @@ public class LineTest {
 	
 	Line l4 = new Line(2, 1, 4, 3);//If X0>Y0 and X1>Y1
 	
+	@Test
+	public void notNull() {
+		assertNotNull(l1.getSlope());
+		assertNotNull(l1.getDistance());
+		assertNotNull(l1.parallelTo(l1));
+	}
 	
 	
 	@Test
@@ -51,6 +58,8 @@ public class LineTest {
 		assertTrue(l2.parallelTo(l2));
 		assertTrue(l3.parallelTo(l3));
 		assertTrue(l4.parallelTo(l4));
+		
+		//Make sure 2 lines are parallel
 		assertTrue(l4.parallelTo(l1));
 		
 	}
