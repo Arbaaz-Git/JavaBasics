@@ -1,4 +1,4 @@
-package ss.jb4.main;
+package JB4;
 
 public class Line {
 	public Line(double x0, double y0, double x1, double y1){
