@@ -10,13 +10,17 @@ package JB4;
  */
 public class Assignment1_Singleton {
 	
-	//The Key to the double locking in the signleton is making sure instance is volatile. This makes instance thread safe
 	private static volatile Assignment1_Singleton instance;	//Instance variable to create singleton
 	
 	public static  Assignment1_Singleton getInstance() {
+		//First check
 		if(instance == null) {
-			synchronized(Assignment1_Singleton.class) {	//Second part to the double checked locking is insuring you synchronize getInstance()
-				instance = new Assignment1_Singleton();
+			//To reduce the cost of synchronization, only synchronize the critical section of the code
+			synchronized(Assignment1_Singleton.class) {	
+				//Second check
+				if(instance == null) {
+					instance = new Assignment1_Singleton();
+				}
 			}
 		}
 		return instance;
