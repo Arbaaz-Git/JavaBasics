@@ -98,7 +98,6 @@ public class LibrarianMenu extends InputHandler {
 		List<Book> book = new ArrayList<>();
 		List<BookCopies> bc = new ArrayList<>();
 		HashMap<Integer, String> map = new HashMap<>();
-		HashMap<Integer, Book> mapBook = new HashMap<>();
 		try {
 			bap = service.readAllBooksNAuthors();
 			book = service.readAllBooks();
@@ -116,7 +115,10 @@ public class LibrarianMenu extends InputHandler {
 		}
 		System.out.printf("%d) Quit to cancel opperation\n", count);
 		int input = parseIntegerInput();	//holds which book to increase number of copies of
-		
+		//exit back to previous window
+		if(input==count) {
+			lib3(lb);
+		}
 		//String manipulation to find corresponding book object to the book chosen
 		String s = map.get(input);
 		String[] parts = s.split(" by");
@@ -125,10 +127,7 @@ public class LibrarianMenu extends InputHandler {
 				myBook=b;
 			}
 		}
-		//exit back to previous window
-		if(input==count) {
-			lib3(lb);
-		}
+
 		
 		try {
 			bc = service.copyOfBookInBranch(lb,myBook);

@@ -28,6 +28,7 @@ public class Main extends InputHandler{
 		System.out.println("1) Librarian");
 		System.out.println("2) Administrator");
 		System.out.println("3) Borrower");
+		System.out.println("4) Exit");
 		input = parseIntegerInput();
 		
 			switch(input){
@@ -35,11 +36,16 @@ public class Main extends InputHandler{
 					LibrarianMenu.lib1();
 					break;
 				case 2:
+					
 					System.out.println("bb");
 					break;
 				case 3:
-					System.out.println("cc");
+					BorrowerMenu.login();
 					break;
+				case 4:
+                    System.out.println("Goodbye!");
+                    System.exit(0);
+                    break;
 				default:
 					break;
 			};

@@ -55,12 +55,12 @@ public class LibrarianService {
 			BookCopiesDAO bcDAO = new BookCopiesDAO(conn);
 			bcDAO.updateBookCopies(bc);
 			conn.commit();	
-			System.out.println("Branch info updated");
+			System.out.println("BookCopies info updated");
 		}catch(Exception e) {
 			if(conn!=null) {
 				conn.rollback();
 			}
-			System.out.println("Failed to update branch info");
+			System.out.println("Failed to update BookCopies info");
 		}finally {
 			if(conn!=null) {
 				conn.rollback();
@@ -199,23 +199,23 @@ public class LibrarianService {
 	}
 	
 	
-	public String addAuthor(Author auth) throws SQLException {
-		Connection conn =null;
-		try {
-			conn = connUtil.getConnection();
-			AuthorDAO aDAO = new AuthorDAO(conn);
-			aDAO.addAuthor(auth);
-			conn.commit();	
-			return "Author added sucessfully";
-		}catch(Exception e) {
-			if(conn!=null) {
-				conn.rollback();
-			}
-			return "Author addition failed";
-		}finally {
-			if(conn!=null) {
-				conn.rollback();
-			}
-		}
-	}
+//	public String addAuthor(Author auth) throws SQLException {
+//		Connection conn =null;
+//		try {
+//			conn = connUtil.getConnection();
+//			AuthorDAO aDAO = new AuthorDAO(conn);
+//			aDAO.addAuthor(auth);
+//			conn.commit();	
+//			return "Author added sucessfully";
+//		}catch(Exception e) {
+//			if(conn!=null) {
+//				conn.rollback();
+//			}
+//			return "Author addition failed";
+//		}finally {
+//			if(conn!=null) {
+//				conn.rollback();
+//			}
+//		}
+//	}
 }

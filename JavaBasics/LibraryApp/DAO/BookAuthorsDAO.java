@@ -12,6 +12,7 @@ import java.util.List;
 
 import Domain.Author;
 import Domain.BookAuthors;
+import Domain.LibraryBranch;
 import Domain.BookAuthors;
 
 /**
@@ -67,4 +68,24 @@ public class BookAuthorsDAO extends BaseDAO<BookAuthors>{
 		return bap;
 	}
 
+	
+	//This method will return all the book titles with their corresponding author from a specific branch
+	public List<String> readBookAuthorFromBranch(LibraryBranch lb) throws SQLException {
+		List<String> bap = new ArrayList<>();
+		String sql = "Select title, authorName\r\n"
+				+ "From tbl_book\r\n"
+				+ "left join tbl_book_authors on tbl_book.bookId = tbl_book_authors.bookId\r\n"
+				+ "left join tbl_author on tbl_book_authors.authorId = tbl_author.authorId\r\n"
+				+ "right join tbl_book_copies on tbl_book.bookId = tbl_book_copies.bookId\r\n"
+				+ "right join tbl_library_branch on tbl_book_copies.branchId= tbl_library_branch.branchId\r\n"
+				+ "where tbl_library_branch.branchId=?";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, lb.getBranchId());
+
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			bap.add(rs.getString(1)+" by "+rs.getString(2));
+		}
+		return bap;
+	}
 }
