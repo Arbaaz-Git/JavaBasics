@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Domain.BookLoans;
+import Domain.Borrower;
 import Domain.BookLoans;
 
 /**
@@ -49,6 +50,12 @@ public class BookLoansDAO extends BaseDAO<BookLoans>{
 			bookloan.add(bl);
 		}
 		return bookloan;
+	}
+	public List<BookLoans> readBorrowedLoans(Borrower b) throws ClassNotFoundException, SQLException {
+		return read("Select tbl_book_loans.*\r\n"
+				+ "From tbl_book_loans\r\n"
+				+ "left join tbl_borrower on tbl_book_loans.cardNo = tbl_borrower.cardNo\r\n"
+				+ "where tbl_borrower.cardNo=?", new Object[] {b.getCardNo()});
 	}
 
 }

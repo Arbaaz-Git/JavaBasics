@@ -36,8 +36,7 @@ public class Main extends InputHandler{
 					LibrarianMenu.lib1();
 					break;
 				case 2:
-					
-					System.out.println("bb");
+					AdministratorMenu.adminMenu();
 					break;
 				case 3:
 					BorrowerMenu.login();

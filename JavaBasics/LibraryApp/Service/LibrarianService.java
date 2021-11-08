@@ -67,27 +67,7 @@ public class LibrarianService {
 			}
 		}
 	}
-//	public List<Author> readAllAuthors() throws SQLException{
-//		Connection conn =null;
-//		List<Author> auth = new ArrayList<>();
-//		try {
-//			conn = connUtil.getConnection();
-//			AuthorDAO aDAO = new AuthorDAO(conn);
-//			auth = aDAO.readAuthors();
-//			conn.commit();	
-//			System.out.println("Returned full list of library branches");
-//		}catch(Exception e) {
-//			if(conn!=null) {
-//				conn.rollback();
-//			}
-//			System.out.println("Failed to return list of library branches");
-//		}finally {
-//			if(conn!=null) {
-//				conn.rollback();
-//			}
-//		}
-//		return auth;
-//	}
+
 //	
 //	public List<BookAuthors> readAllBookAuthors() throws SQLException{
 //		Connection conn =null;
@@ -198,24 +178,4 @@ public class LibrarianService {
 		return branches;
 	}
 	
-	
-//	public String addAuthor(Author auth) throws SQLException {
-//		Connection conn =null;
-//		try {
-//			conn = connUtil.getConnection();
-//			AuthorDAO aDAO = new AuthorDAO(conn);
-//			aDAO.addAuthor(auth);
-//			conn.commit();	
-//			return "Author added sucessfully";
-//		}catch(Exception e) {
-//			if(conn!=null) {
-//				conn.rollback();
-//			}
-//			return "Author addition failed";
-//		}finally {
-//			if(conn!=null) {
-//				conn.rollback();
-//			}
-//		}
-//	}
 }
