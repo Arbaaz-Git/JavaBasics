@@ -28,8 +28,8 @@ public class BookCopiesDAO extends BaseDAO<BookCopies>{
 				new Object[] {bc.getBookId(),bc.getBranchId(),bc.getNoOfCopies()});
 	}
 	public void updateBookCopies(BookCopies bc)  throws SQLException, ClassNotFoundException {
-		save("UPDATE tbl_book_copies set noOfCopies=? where bookId=? and branchId=? ",
-				new Object[] {bc.getNoOfCopies(),bc.getBookId(),bc.getBranchId()});
+		save("UPDATE tbl_book_copies set noOfCopies=?, branchId=? where bookId=? ",
+				new Object[] {bc.getNoOfCopies(),bc.getBranchId(),bc.getBookId()});
 	}
 	public void deleteBookCopies(BookCopies bc) throws SQLException, ClassNotFoundException {
 		save("Delete from tbl_book_copies where branchId=? ",new Object[] {bc.getBranchId()});
