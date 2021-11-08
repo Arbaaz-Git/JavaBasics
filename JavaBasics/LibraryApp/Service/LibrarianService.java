@@ -68,29 +68,6 @@ public class LibrarianService {
 		}
 	}
 
-//	
-//	public List<BookAuthors> readAllBookAuthors() throws SQLException{
-//		Connection conn =null;
-//		List<BookAuthors> bAuth = new ArrayList<>();
-//		try {
-//			conn = connUtil.getConnection();
-//			BookAuthorsDAO baDAO = new BookAuthorsDAO(conn);
-//			bAuth = baDAO.readBookAuthors();
-//			conn.commit();	
-//			System.out.println("Returned full list of library branches");
-//		}catch(Exception e) {
-//			if(conn!=null) {
-//				conn.rollback();
-//			}
-//			System.out.println("Failed to return list of library branches");
-//		}finally {
-//			if(conn!=null) {
-//				conn.rollback();
-//			}
-//		}
-//		return bAuth;
-//	}
-	
 	public List<String> readAllBooksNAuthors() throws SQLException {
 		Connection conn =null;
 		List<String> bap = new ArrayList<>();
