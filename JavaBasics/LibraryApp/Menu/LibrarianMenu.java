@@ -71,6 +71,7 @@ public class LibrarianMenu extends InputHandler {
 	
 	protected static void lib3(LibraryBranch lb) {
 		System.out.println("----------------------------------------");
+		System.out.printf("%s Library\n",lb.getBranchName());
 		System.out.println("1) Update the details of the Library ");
 		System.out.println("2) Add copies of Book to the Branch");
 		System.out.println("3) Quit to previous ");
@@ -135,7 +136,8 @@ public class LibrarianMenu extends InputHandler {
 			System.out.printf("updateBookCopies: failed to load nCopies from branch: %d\n",lb.getBranchName());
 			
 		}
-		System.out.printf("Branch: %s\n",lb.getBranchName());
+		System.out.println("----------------------------------------");
+		System.out.printf("Branch: %s Library\n",lb.getBranchName());
 		//init the rest of bookcopies just in case the query returns a null
 		bookcopies.setBookId(myBook.getBookId());
 		bookcopies.setBranchId(lb.getBranchId());
@@ -156,6 +158,7 @@ public class LibrarianMenu extends InputHandler {
 	}
 	
 	private static void updateBranch(LibraryBranch lb) {
+		System.out.println("----------------------------------------");
 		System.out.printf("You have chosen to update the Branch with Branch Id: %d and Branch Name: %s.\n",lb.getBranchId(),lb.getBranchName());
 		System.out.println("Enter ‘quit’ at any prompt to cancel operation.");
 		System.out.println("Please enter new branch name or enter N/A for no change:");

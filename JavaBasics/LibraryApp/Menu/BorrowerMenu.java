@@ -64,7 +64,7 @@ public class BorrowerMenu extends InputHandler {
 			System.out.println("bookCheckOut: Error loading SQL from table tbl_library_branch");
 		}
 		System.out.println("----------------------------------------");
-		System.out.println("Pick the Branch you want to check out from:");
+		System.out.println("Pick the Branch you want to process from:");
 		int count = 1;
 		for(LibraryBranch lb : branches) {
 			map.put(count, lb);
@@ -98,7 +98,7 @@ public class BorrowerMenu extends InputHandler {
 			System.out.printf("updateBookCopies: failed to load all books from branch: %d\n",lb.getBranchName());
 		}
 		System.out.println("----------------------------------------");
-		System.out.println("Pick the Book you want to check out:");
+		System.out.println("Pick the Book you want to process:");
 		int count=1;
 		for(String s : bap) {
 			map.put(count, s);
